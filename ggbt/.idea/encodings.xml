@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/algorithm/ggChips_1.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datas/SZ#159919.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/datas/tdx/SH#600004.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/gbk1/optimization_1.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gbk1/test1.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/messages_1/receive.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/messages_1/send.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/others/Multithreaded.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/others/Multithreaded_update.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/others/update_pip.py" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

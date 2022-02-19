@@ -174,7 +174,7 @@ def runstrat(short, long,m,n,k1,k2):
     cerebro = bt.Cerebro()
     cerebro.addstrategy(TestStrategy, short=int(short),long=int(long),m=int(m),n=int(n),k1=int(k1),k2=int(k2))
     cerebro.adddata(data)
-    cerebro.addsizer(bt.sizers.AllInSizer)
+    cerebro.addsizer(LongOnly)
     comminfo = stampDutyCommissionScheme()
     cerebro.broker.addcommissioninfo(comminfo)
     cerebro.broker.setcash(100000.0)  # 设置初始资金

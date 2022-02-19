@@ -222,7 +222,7 @@ def runstrat(period_kdj, period_dslow, period_dfast):
     return winp
 
 
-opt = optunity.maximize(runstrat, num_evals=3, solver_name='particle swarm',
+opt = optunity.maximize(runstrat, num_evals=1, solver_name='particle swarm',
                         period_kdj=[1, 40], period_dslow=[1, 30], period_dfast=[1, 30])
 
 ########################################
@@ -242,5 +242,6 @@ cerebro.addanalyzer(bt.analyzers.TradeAnalyzer,_name='ta')
 rs = cerebro.run()
 rs = rs[0]
 winp=rs.analyzers.ta.rets['won']['total']/(rs.analyzers.ta.rets['won']['total']+rs.analyzers.ta.rets['lost']['total'])
+
 print(cerebro.broker.getvalue(),winp)
 cerebro.plot()

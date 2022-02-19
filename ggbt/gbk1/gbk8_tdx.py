@@ -141,13 +141,15 @@ class SmaCross(bt.Strategy):
         #     print('%s=%s' % (name, value))
         print(self.trade_stock)
 
-cerebro = bt.Cerebro()
+cerebro = bt.Cerebro(stdstats=False)
+cerebro.addobserver(bt.observers.Broker)
+cerebro.addobserver(bt.observers.Trades)
+
 time0=datetime.now()
 
 filename = os.listdir(path_root+"/datas/tdx")
-maxstocknum = 2  # 股票池最大股票数目
-#filename=filename[1971:1972]
-# filename=filename[862:863]
+maxstocknum = 3  # 股票池最大股票数目
+
 filename=filename[0:maxstocknum]
 #设置测试时间
 back_year = 3
@@ -195,6 +197,7 @@ for fname in filename:
         close=4,
         volume=5,
         openinterest=-1,
+        plot=False
     )
     cerebro.adddata(data,name=fname)
 
@@ -214,11 +217,14 @@ cerebro.broker.setcommission(commission=0.001)
 cerebro.addsizer(LongOnly)
 
 
-cerebro.run()
+results = cerebro.run()
+strat = results[0]
 
 
 # 最终收益或亏损
 pnl = (cerebro.broker.get_value() - startcash)/startcash
 print('Profit ... or Loss: {:.2f}'.format(pnl))
 print("用时：",datetime.now()-time0)
+cerebro.addobserver(bt.observers.Broker)
+cerebro.addobserver(bt.observers.Trades)
 cerebro.plot()

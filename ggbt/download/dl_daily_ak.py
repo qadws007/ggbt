@@ -79,8 +79,8 @@ def get_fund_minute_ak(code=None, start_date=None, end_date=None):
 
     pass
 
-
-# list_stock_ak()
-# list_index_ak()
-#get_fund_daily_ak(["000051"])
-get_stock_daily_ak('600519')
+if __name__=='__main__':
+    # list_stock_ak()
+    # list_index_ak()
+    get_fund_daily_ak(["510300"])
+    #get_stock_daily_ak('600519')
