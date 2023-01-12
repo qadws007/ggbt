@@ -51,4 +51,4 @@ def screenshot_pil():
     #image.show()
 
 if __name__=="__main__":
-    scrren_cut()
+    screenshot_pil()
